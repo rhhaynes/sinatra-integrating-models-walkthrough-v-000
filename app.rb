@@ -8,7 +8,7 @@ class App < Sinatra::Base
 
   post '/' do
     @analyzed_text = TextAnalyzer.new(params[:user_text])
-    p @analyzed_text.most_used_letter.keys.first.to_s
+    p @analyzed_text.most_used_letter.keys.first.to_s.upcase
     p @analyzed_text.most_used_letter.values.first.to_s
     erb :results
   end
